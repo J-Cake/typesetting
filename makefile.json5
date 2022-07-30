@@ -1,0 +1,16 @@
+{
+    env: {
+        PATH: "echo $PWD/node_modules/.bin:$PATH",
+        esbuild: "echo --bundle --sourcemap --format=esm --platform=node"
+    },
+    targets: {
+        'build/index.js': {
+            dependencies: ['routes/*.ts'],
+            run: "esbuild routes/index.ts --outfile=build/index.js $esbuild"
+        },
+        'build/auth.js': {
+            dependencies: ['routes/auth.ts'],
+            run: "esbuild routes/auth.ts --outfile=build/auth.js $esbuild"
+        }
+    }
+}
