@@ -1,9 +1,9 @@
 {
     "name": "@j-cake/scriptlet",
-    "main": "build/run.js",
     "type": "module",
-    "version": "0.1.0",
-    "bin": "build/run.js",
+    "scripts": {
+        "start": "scriptlet --port 1920 build -s static"
+    },
     "dependencies": {
         "@j-cake/jcake-utils": "latest",
         "scriptlet": "link:../scriptlet/build",
@@ -14,15 +14,5 @@
         "@j-cake/mkjson": "latest",
         "typescript": "latest",
         "esbuild": "latest"
-    },
-    "imports": {
-        "#app": "./build/index.js"
-    },
-    "deploy": {
-        "main": "run.js",
-        "bin": "run.js",
-        "imports": {
-            "#app": "./index.js"
-        }
     }
 }

@@ -1,4 +1,4 @@
-/// <reference path="../../def.d.ts" />
+/// <reference path="../../scriptlet/def.d.ts" />
 
 import {iter} from '@j-cake/jcake-utils/iter';
 
@@ -6,8 +6,6 @@ export default function (req: HTTPRequest): AsyncIterable<string> {
     req
         .status(200)
         .header('content-type', 'text/html');
-
-    console.log('hi')
 
     if (req.url.searchParams.get('req') == 'signup')
         return iter.from([`
